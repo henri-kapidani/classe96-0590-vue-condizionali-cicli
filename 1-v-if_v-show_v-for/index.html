@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue conditionals and loops</title>
+</head>
+<body>
+	<div id="root">
+		<h1 v-if="varBooleana">Io sono il v-if</h1>
+		<h2 v-else-if="varBooleana2">Io sono il v-esle-if</h2>
+		<h3 v-else>Io sono il v-else finale</h3>
+		<button @click="toggleVariable">Toggle variable</button>
+
+		<p v-show="varBooleana">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, est? Molestias obcaecati distinctio modi dignissimos quae, adipisci facilis, soluta consectetur incidunt officiis accusantium perspiciatis, expedita ad accusamus voluptas. Ullam, nihil.</p>
+		<p v-show="!varBooleana">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam non delectus laudantium? Ipsa ea velit fuga fugit doloremque quidem dolores a fugiat dicta ratione, similique tempore aliquam doloribus sint molestias.
+		Adipisci reprehenderit dicta voluptatibus. Sapiente nisi explicabo, quod exercitationem sit aut, corrupti esse ducimus nihil ullam ipsum vero sequi hic sunt placeat doloribus tempore totam quasi officia distinctio delectus ut.
+		Iusto corrupti ipsam fugiat, at architecto quas, doloribus ex esse soluta quo expedita quos aut cupiditate nihil dolorum dolores necessitatibus quasi ea, nam sed possimus sequi ab earum vero! Accusamus!</p>
+
+		<template v-if="varBooleana">
+			<h1>Title</h1>
+			<p>Paragraph 1</p>
+			<p>Paragraph 2</p>
+		</template>
+
+		<ul>
+			<template v-for="(element, index) in arrStrings" :key="element">
+				<!-- <li v-if="index < 2">{{ element }}</li> -->
+				<li>{{ element }}</li>
+			</template>
+		</ul>
+
+		<button @click="pushItem">Pusha</button>
+
+		<ul>
+			<li v-for="num in 100" :key="num">{{ num }}</li>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
